@@ -43,14 +43,10 @@ script:
           WINEPREFIX="$GAMEDIR" "$WINEBIN" reg add "HKCU\Control Panel\Desktop" /v LogPixels /t REG_DWORD /d $dpi /f
     - execute:
         command: mkdir -p "$GAMEDIR/drive_c/Games/$SUBDIR"
-    - extract:
-        src: setup
-        dst: $CACHE
-        format: gog
-    - move:
-        description: Copying game files...
-        src: $CACHE/USA
-        dst: $GAMEDIR/drive_c/Games/$SUBDIR/
+    - task:
+        args: /SILENT /LANG=jp /SP- /NOCANCEL /SUPPRESSMSGBOXES /NOGUI /DIR="$GAMEDIR/drive_c/Games/$SUBDIR/"
+        executable: installer
+        name: wineexec
     - extract:
         src: sourcenext_conversion_patch
         dst: $CACHE
