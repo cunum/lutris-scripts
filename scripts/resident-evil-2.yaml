@@ -22,13 +22,13 @@ script:
     - setup: N/A:GOG setup exe for Resident Evil 2
     - rebirth:
         filename: re2cr-2024-09-01.7z
-        url: https://classicrebirth.com/index.php/download/resident-evil-2-classic-rebirth/
+        url: https://classicrebirth.com/index.php/download/resident-evil-2-classic-rebirth/?wpdmdl=390&refresh=67a5fb503dd131738931024
     - sourcenext_patch:
         filename: bio2 1.10.7z
-        url: https://classicrebirth.com/index.php/download/biohazard-2-sourcenext-1-1-0-patch/
+        url: https://classicrebirth.com/index.php/download/biohazard-2-sourcenext-1-1-0-patch/?wpdmdl=399&refresh=67a5fb1e764791738930974
     - sourcenext_conversion_patch: https://archive.org/download/re2-unofficial-source-next-1.1.0-conversion-patch/Unofficial%20SourceNext%201.1.0%20conversion%20patch-28-v1-2-1724884556.zip
   game:
-    exe: drive_c/GOG Games/$SUBDIR/$EXE
+    exe: drive_c/Games/$SUBDIR/$EXE
     prefix: $GAMEDIR
   installer:
     - task:
@@ -44,24 +44,24 @@ script:
           [[ $pixels -gt 2100 ]] && dpi=216
           WINEPREFIX="$GAMEDIR" "$WINEBIN" reg add "HKCU\Control Panel\Desktop" /v LogPixels /t REG_DWORD /d $dpi /f
     - execute:
-        command: mkdir -p "$GAMEDIR/drive_c/GOG Games/$SUBDIR"
+        command: mkdir -p "$GAMEDIR/drive_c/Games/$SUBDIR"
     - task:
-        args: /SILENT /LANG=jp /SP- /NOCANCEL /SUPPRESSMSGBOXES /NOGUI
+        args: /SILENT /LANG=jp /SP- /NOCANCEL /SUPPRESSMSGBOXES /NOGUI /DIR="$GAMEDIR/drive_c/Games/$SUBDIR/"
         executable: setup
         name: wineexec
     - extract:
         src: sourcenext_conversion_patch
         dst: $CACHE
     - merge:
-        src: $CACHE/SourceNext
-        dst: $GAMEDIR/drive_c/GOG Games/$SUBDIR/
+        src: $CACHE/SourceNext 1.1.0
+        dst: $GAMEDIR/drive_c/Games/$SUBDIR/
     - extract:
         src: rebirth
-        dst: $GAMEDIR/drive_c/GOG Games/$SUBDIR/
+        dst: $GAMEDIR/drive_c/Games/$SUBDIR/
         format: 7z
     - extract:
         src: sourcenext_patch
-        dst: $GAMEDIR/drive_c/GOG Games/$SUBDIR/
+        dst: $GAMEDIR/drive_c/Games/$SUBDIR/
         format: 7z
   wine:
     dgvoodoo2: true
