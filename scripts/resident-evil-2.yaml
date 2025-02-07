@@ -45,7 +45,7 @@ script:
         command: mkdir -p "$GAMEDIR/drive_c/Games/$SUBDIR"
     - task:
         args: /SILENT /LANG=jp /SP- /NOCANCEL /SUPPRESSMSGBOXES /NOGUI /DIR="$GAMEDIR/drive_c/Games/$SUBDIR/"
-        executable: installer
+        executable: setup
         name: wineexec
     - extract:
         src: sourcenext_conversion_patch
