@@ -7,7 +7,9 @@ gogslug: resident_evil_2
 slug: resident-evil-2-gog
 version: GOG with Classic REbirth
 notes: |
-  Installs Japanese version from GOG and applies the Classic REbirth patch and the SourceNext 1.1.0 official patch. 
+  Installs Japanese version (don't worry will be English in the end) from GOG and applies the following patches:
+  - Classic REbirth patch
+  - SourceNext 1.1.0 official patch 
   
   You will need to following:
   - The game setup exe downloaded from your GOG library.
@@ -26,7 +28,7 @@ script:
         url: https://classicrebirth.com/index.php/download/biohazard-2-sourcenext-1-1-0-patch/
     - sourcenext_conversion_patch: https://archive.org/download/re2-unofficial-source-next-1.1.0-conversion-patch/Unofficial%20SourceNext%201.1.0%20conversion%20patch-28-v1-2-1724884556.zip
   game:
-    exe: drive_c/Games/$SUBDIR/$EXE
+    exe: drive_c/GOG Games/$SUBDIR/$EXE
     prefix: $GAMEDIR
   installer:
     - task:
@@ -42,9 +44,9 @@ script:
           [[ $pixels -gt 2100 ]] && dpi=216
           WINEPREFIX="$GAMEDIR" "$WINEBIN" reg add "HKCU\Control Panel\Desktop" /v LogPixels /t REG_DWORD /d $dpi /f
     - execute:
-        command: mkdir -p "$GAMEDIR/drive_c/Games/$SUBDIR"
+        command: mkdir -p "$GAMEDIR/drive_c/GOG Games/$SUBDIR"
     - task:
-        args: /SILENT /LANG=jp /SP- /NOCANCEL /SUPPRESSMSGBOXES /NOGUI /DIR="$GAMEDIR/drive_c/Games/$SUBDIR/"
+        args: /SILENT /LANG=jp /SP- /NOCANCEL /SUPPRESSMSGBOXES /NOGUI
         executable: setup
         name: wineexec
     - extract:
@@ -52,14 +54,14 @@ script:
         dst: $CACHE
     - merge:
         src: $CACHE/SourceNext
-        dst: $GAMEDIR/drive_c/Games/$SUBDIR/
+        dst: $GAMEDIR/drive_c/GOG Games/$SUBDIR/
     - extract:
         src: rebirth
-        dst: $GAMEDIR/drive_c/Games/$SUBDIR/
+        dst: $GAMEDIR/drive_c/GOG Games/$SUBDIR/
         format: 7z
     - extract:
         src: sourcenext_patch
-        dst: $GAMEDIR/drive_c/Games/$SUBDIR/
+        dst: $GAMEDIR/drive_c/GOG Games/$SUBDIR/
         format: 7z
   wine:
     dgvoodoo2: true
