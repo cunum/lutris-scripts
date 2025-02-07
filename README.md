@@ -1,6 +1,10 @@
-Installs the GOG version of the games and applies patches to make them work on Steam Deck.
+Installs the GOG versions of the following games and applies patches to make them work on Steam Deck:
 
-## **Install Guide (Steam Deck)**
+- Resident Evil (1996)
+- Resident Evil 2 (1998)
+
+## **Install Guide for Steam Deck**
+
 1. Switch to Desktop Mode on Steam Deck.
 
 2. Download the setup files for the game from your GOG account
