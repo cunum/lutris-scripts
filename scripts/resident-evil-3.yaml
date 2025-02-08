@@ -16,12 +16,16 @@ notes: |
 script:
   variables:
     SUBDIR: Resident Evil 3
-    EXE: ResidentEvil3.exe
+    EXE: BIOHAZARD(R) 3 PC.exe
   files:
     - setup: N/A:GOG setup exe for Resident Evil 3
     - rebirth:
         filename: re3cr 2021-08-04.7z
         url: https://classicrebirth.com/index.php/download/resident-evil-3-classic-rebirth/?wpdmdl=1327&refresh=67a78d411d5a91739033921
+    - sourcenext_patch:
+        filename: bh3 1.1.0.7z
+        url: https://classicrebirth.com/index.php/download/biohazard-3-sourcenext-1-1-0-patch/?wpdmdl=1028&refresh=67a793b5313381739035573
+    - sourcenext_conversion_patch: https://www.moddb.com/downloads/mirror/272178/122/7f752d725f4e24cce3f6e3af5ef72ee6/
   game:
     exe: drive_c/Games/$SUBDIR/$EXE
     prefix: $GAMEDIR
@@ -45,7 +49,17 @@ script:
         executable: setup
         name: wineexec
     - extract:
+        src: sourcenext_conversion_patch
+        dst: $CACHE
+    - merge:
+        src: $CACHE/SourceNext 1.1.0
+        dst: $GAMEDIR/drive_c/Games/$SUBDIR/
+    - extract:
         src: rebirth
+        dst: $GAMEDIR/drive_c/Games/$SUBDIR/
+        format: 7z
+    - extract:
+        src: sourcenext_patch
         dst: $GAMEDIR/drive_c/Games/$SUBDIR/
         format: 7z
   wine:
