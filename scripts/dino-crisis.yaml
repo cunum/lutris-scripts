@@ -7,7 +7,10 @@ gogslug: dino_crisis
 slug: dino-crisis-gog
 version: GOG with Classic REbirth
 notes: |
-  Installs English/USA version from GOG and applies the Classic REbirth patch with working high quality FMVs. 
+  Installs Japanese version (don't worry, will be English in the end) from GOG and applies the following patches:
+  - Classic REbirth patch
+  - Windows XP patch
+  - HD Mods (textures, movies, audio)
   
   You will need to following:
   - The game setup exe downloaded from your GOG library.

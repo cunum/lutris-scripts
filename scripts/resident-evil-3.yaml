@@ -9,7 +9,8 @@ version: GOG with Classic REbirth
 notes: |
   Installs Japanese version (don't worry will be English in the end) from GOG and applies the following patches:
   - Classic REbirth patch
-  
+  - SourceNext 1.1.0 official patch 
+
   You will need to following:
   - The game setup exe downloaded from your GOG library.
 
