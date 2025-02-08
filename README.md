@@ -2,6 +2,7 @@ Lutris scripts for the installation of the GOG versions of the following games:
 
 - Resident Evil (1996)
 - Resident Evil 2 (1998)
+- Resident Evil 3 (1999)
 
 The scripts install the games and apply different patches (like the popular REbirth patch) to make the games work flawlessly on Steam Deck.
 

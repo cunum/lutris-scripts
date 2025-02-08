@@ -16,7 +16,7 @@ notes: |
 script:
   variables:
     SUBDIR: Resident Evil 3
-    EXE: RELauncher.exe
+    EXE: ResidentEvil3.exe
   files:
     - setup: N/A:GOG setup exe for Resident Evil 3
     - rebirth:
