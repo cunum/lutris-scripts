@@ -20,8 +20,8 @@ script:
   files:
     - setup: N/A:GOG setup exe for Resident Evil
     - patch:
-        filename: Unofficial MediaKite 1.01 patch for USA-25-v1-0-1717941568.zip
-        url: https://github.com/cunum/lutris-scripts/raw/refs/heads/master/resources/resident-evil/Unofficial%20MediaKite%201.01%20patch%20for%20USA-25-v1-0-1717941568.zip
+        filename: Unofficial_MediaKite_1.01_patch_for_USA.zip
+        url: https://www.moddb.com/downloads/unofficial-mediakite-101-patch-for-usa
     - rebirth:
         filename: re1_classic_rebirth_ 2020-12-06.7z
         url: https://classicrebirth.com/index.php/download/resident-evil-dll-fix-for-classic-edition/?wpdmdl=381&refresh=64cbde86b005c1691082374
