@@ -9,7 +9,7 @@ version: GOG with Classic REbirth
 notes: |
   Installs English/USA version from GOG and applies the Classic REbirth patch with working high quality FMVs. 
   
-  You will need to following:
+  You will need the following:
   - The game setup exe downloaded from your GOG library.
   
   Original script from user eskay993
