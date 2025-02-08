@@ -1,9 +1,21 @@
 Lutris scripts for the installation of the GOG versions of the following games:
 
 - Resident Evil (1996)
+  - Classic REbirth
+  - Unofficial MediaKite 1.01 patch for USA
+  - HQ movie pack
 - Resident Evil 2 (1998)
+  - Classic REbirth
+  - SourceNext 1.1.0 official patch
 - Resident Evil 3 (1999)
+  - Classic REbirth
+  - SourceNext 1.1.0 official patch
 - Dino Crisis (1999)
+  - Classic REbirth
+  - Windows XP patch
+  - HQ movie pack
+  - HQ audio pack
+  - HQ texture pack
 
 The scripts install the games and apply different patches (like the popular REbirth patch) to make the games work flawlessly on Steam Deck.
 
