@@ -27,7 +27,7 @@ script:
         url: https://classicrebirth.com/index.php/download/biohazard-3-sourcenext-1-1-0-patch/?wpdmdl=1028&refresh=67a793b5313381739035573
     - sourcenext_conversion_patch:
         filename: Unofficial_SourceNext_1.1.0_conversion_patch_for_RE3_Windows_98.4.zip
-        url: https://www.moddb.com/downloads/mirror/272178/122/7f752d725f4e24cce3f6e3af5ef72ee6/
+        url: https://www.moddb.com/downloads/unofficial-sourcenext-1-1-0-conversion-patch-for-re3-windows-98
   game:
     exe: drive_c/Games/$SUBDIR/$EXE
     prefix: $GAMEDIR
