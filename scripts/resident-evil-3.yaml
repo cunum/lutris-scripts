@@ -1,0 +1,54 @@
+game_slug: resident-evil-3
+name: "Resident Evil 3"
+year: 1999
+user: cunum
+runner: wine
+gogslug: resident_evil_3
+slug: resident-evil-3-gog
+version: GOG with Classic REbirth
+notes: |
+  Installs Japanese version (don't worry will be English in the end) from GOG and applies the following patches:
+  - Classic REbirth patch
+  
+  You will need to following:
+  - The game setup exe downloaded from your GOG library.
+
+script:
+  variables:
+    SUBDIR: Resident Evil 3
+    EXE: RELauncher.exe
+  files:
+    - setup: N/A:GOG setup exe for Resident Evil 3
+    - rebirth:
+        filename: re3cr 2021-08-04.7z
+        url: https://classicrebirth.com/index.php/download/resident-evil-3-classic-rebirth/?wpdmdl=1327&refresh=67a78d411d5a91739033921
+  game:
+    exe: drive_c/Games/$SUBDIR/$EXE
+    prefix: $GAMEDIR
+  installer:
+    - task:
+        description: Creating Wine prefix
+        name: create_prefix
+        prefix: $GAMEDIR
+    - execute:
+        command: |
+          dpi=96
+          [[ $RESOLUTION_WIDTH -gt $RESOLUTION_HEIGHT ]] && pixels=$RESOLUTION_HEIGHT || pixels=$RESOLUTION_WIDTH
+          [[ $pixels -gt 1000 ]] && dpi=120
+          [[ $pixels -gt 1400 ]] && dpi=144
+          [[ $pixels -gt 2100 ]] && dpi=216
+          WINEPREFIX="$GAMEDIR" "$WINEBIN" reg add "HKCU\Control Panel\Desktop" /v LogPixels /t REG_DWORD /d $dpi /f
+    - execute:
+        command: mkdir -p "$GAMEDIR/drive_c/Games/$SUBDIR"
+    - task:
+        args: /SILENT /LANG=jp /SP- /NOCANCEL /SUPPRESSMSGBOXES /NOGUI /DIR="$GAMEDIR/drive_c/Games/$SUBDIR/"
+        executable: setup
+        name: wineexec
+    - extract:
+        src: rebirth
+        dst: $GAMEDIR/drive_c/Games/$SUBDIR/
+        format: 7z
+  wine:
+    dgvoodoo2: true
+    overrides:
+      ddraw: n,b
