@@ -15,7 +15,6 @@ notes: |
   You will need the following:
   - The game setup exe downloaded from your GOG library.
   - HD movie pack from here https://classicrebirth.com/index.php/download/dino-crisis-2-high-quality-movies/
-  - HD audio pack from here https://classicrebirth.com/index.php/download/dino-crisis-2-high-quality-sfx/
 
 script:
   variables:
@@ -24,13 +23,15 @@ script:
   files:
     - setup: N/A:GOG setup exe for Dino Crisis 2
     - hq_movie: N/A:HQ movie pack for Dino Crisis 2
-    - hq_audio: N/A:HQ audio pack for Dino Crisis 2
     - patch:
         filename: Dino2-xp.7z
         url: https://classicrebirth.com/index.php/download/dino-crisis-2-windows-xp-patch/?wpdmdl=1324&refresh=67a7d676e36171739052662
     - rebirth:
         filename: dc2cr-2024-05-05.7z
         url: https://classicrebirth.com/index.php/download/dino-crisis-2-classic-rebirth-dll/?wpdmdl=1921&refresh=67a7d6436ae6f1739052611
+    - hq_audio:
+        filename: dc2cr_hq_sfx_2024-04-29.7z
+        url: https://classicrebirth.com/index.php/download/dino-crisis-2-high-quality-sfx/?wpdmdl=1917&refresh=67a8b0af874861739108527
   game:
     exe: drive_c/Games/$SUBDIR/$EXE
     prefix: $GAMEDIR
