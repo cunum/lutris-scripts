@@ -14,6 +14,8 @@ notes: |
   
   You will need the following:
   - The game setup exe downloaded from your GOG library.
+  - HD movie pack from here https://classicrebirth.com/index.php/download/dino-crisis-high-quality-videos/
+  - HD audio pack from here https://classicrebirth.com/index.php/download/dino-crisis-high-quality-music/
 
 script:
   variables:
@@ -21,6 +23,8 @@ script:
     EXE: DINO.exe
   files:
     - setup: N/A:GOG setup exe for Dino Crisis
+    - hq_movie: N/A:HQ movie pack for Dino Crisis
+    - hq_audio: N/A:HQ audio pack for Dino Crisis
     - patch:
         filename: DINO xp.7z
         url: https://classicrebirth.com/index.php/download/dino-crisis-windows-xp-patch/?wpdmdl=972&refresh=67a7a5c2c4ff11739040194
@@ -30,12 +34,6 @@ script:
     - hq_textures:
         filename: HD_Mod_1.0.rar
         url: https://download2390.mediafire.com/wxcm3sde0abg_zOi60bYrMLW7y3xR4J3LIB4pbiKS5xTESXNhoXIawrvcXrpgQBLUbCz1fWDL-SoRkGOShycE4L-ysVHx0WwSTOQ0KbFknTjNiH24a9OelYZiwNL1NBj6SPwR8baQDSuzxicbQ2AnIk1W5BOBXNqDTrSTpDk7uZx/ozaua4228fffyia/HD_Mod_1.0.rar
-    - hq_movie:
-        filename: DINO_CRISIS_HQ_Movie.rar
-        url: https://download1529.mediafire.com/ocmg7vsvwg7g8FUZWCc3V5Ueve_hq7-1hj4vIIgFEYjhRHgCSmnFvxkbLwLM0e6rKz9LYxhMewXpn2od0rZ7bzB6nyYA9hZ-OWFBdOBiuex67ygJ29CCD-ZetW4rt-1iT3NtT4yNrE8Wu-lCHUe-2WlJtCog7VOP24an-rsZQ7Gp/ay7dtr2mylsonch/DINO_CRISIS_HQ_MOVIE.rar
-    - hq_audio:
-        filename: DINO_CRISIS_HQ_(Voice)_and_(Background_Music)_updated.rar
-        url: https://downloader.disk.yandex.ru/disk/3c0c2bf2431463fe1830fd51bd241a804e90b28e9828210f782d8a0cc1aa0e46/67a7e61f/6tlkAMnX-8Kgpqz5tu-8P1HkxnQPtaAHb3PWcB2Rtab4yUiihcNZIduuEGW4n93AlARqvYKzEPSpJjZkpV5bpA%3D%3D?uid=0&filename=DINO_CRISIS_HQ_(Voice)_and_(Background_Music)_updated.rar&disposition=attachment&hash=hy0%2B7Uk%2Bo3wPyijqm00GW88Rh6uuP259b5iOSlaaMWagKHJ57BpkqnDv4wIh6LR%2Fq%2FJ6bpmRyOJonT3VoXnDag%3D%3D&limit=0&content_type=application%2Fx-rar&owner_uid=219164244&fsize=304269968&hid=dcb2956611599284c41ca96862fef065&media_type=compressed&tknv=v2
   game:
     exe: drive_c/Games/$SUBDIR/$EXE
     prefix: $GAMEDIR
@@ -61,23 +59,18 @@ script:
     - extract:
         src: patch
         dst: $GAMEDIR/drive_c/Games/$SUBDIR/
-        format: 7z
     - extract:
         src: rebirth
         dst: $GAMEDIR/drive_c/Games/$SUBDIR/
-        format: 7z
     - extract:
         src: hq_textures
         dst: $GAMEDIR/drive_c/Games/$SUBDIR/
-        format: rar
     - extract:
         src: hq_movie
         dst: $GAMEDIR/drive_c/Games/$SUBDIR/Movie/
-        format: rar
     - extract:
         src: hq_audio
         dst: $CACHE
-        format: rar
     - merge:
         description: Copying hq audio files...
         src: $CACHE/Sound/
