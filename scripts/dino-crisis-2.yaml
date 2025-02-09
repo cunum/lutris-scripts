@@ -1,0 +1,72 @@
+game_slug: dino-crisis-2
+name: "Dino Crisis 2"
+year: 2000
+user: cunum
+runner: wine
+gogslug: dino_crisis_2
+slug: dino-crisis-2-gog
+version: GOG with Classic REbirth
+notes: |
+  Installs Japanese version (don't worry, will be English in the end) from GOG and applies the following patches:
+  - Classic REbirth patch
+  - Windows XP patch
+  - HD Mods (movies, audio)
+  
+  You will need the following:
+  - The game setup exe downloaded from your GOG library.
+  - HD movie pack from here https://classicrebirth.com/index.php/download/dino-crisis-2-high-quality-movies/
+  - HD audio pack from here https://classicrebirth.com/index.php/download/dino-crisis-2-high-quality-sfx/
+
+script:
+  variables:
+    SUBDIR: Dino Crisis 2
+    EXE: DINO2.exe
+  files:
+    - setup: N/A:GOG setup exe for Dino Crisis 2
+    - hq_movie: N/A:HQ movie pack for Dino Crisis 2
+    - hq_audio: N/A:HQ audio pack for Dino Crisis 2
+    - patch:
+        filename: Dino2-xp.7z
+        url: https://classicrebirth.com/index.php/download/dino-crisis-2-windows-xp-patch/?wpdmdl=1324&refresh=67a7d676e36171739052662
+    - rebirth:
+        filename: dc2cr-2024-05-05.7z
+        url: https://classicrebirth.com/index.php/download/dino-crisis-2-classic-rebirth-dll/?wpdmdl=1921&refresh=67a7d6436ae6f1739052611
+  game:
+    exe: drive_c/Games/$SUBDIR/$EXE
+    prefix: $GAMEDIR
+  installer:
+    - task:
+        description: Creating Wine prefix
+        name: create_prefix
+        prefix: $GAMEDIR
+    - execute:
+        command: |
+          dpi=96
+          [[ $RESOLUTION_WIDTH -gt $RESOLUTION_HEIGHT ]] && pixels=$RESOLUTION_HEIGHT || pixels=$RESOLUTION_WIDTH
+          [[ $pixels -gt 1000 ]] && dpi=120
+          [[ $pixels -gt 1400 ]] && dpi=144
+          [[ $pixels -gt 2100 ]] && dpi=216
+          WINEPREFIX="$GAMEDIR" "$WINEBIN" reg add "HKCU\Control Panel\Desktop" /v LogPixels /t REG_DWORD /d $dpi /f
+    - execute:
+        command: mkdir -p "$GAMEDIR/drive_c/Games/$SUBDIR"
+    - task:
+        args: /SILENT /LANG=jp /SP- /NOCANCEL /SUPPRESSMSGBOXES /NOGUI /DIR="$GAMEDIR/drive_c/Games/$SUBDIR/"
+        executable: setup
+        name: wineexec
+    - extract:
+        src: patch
+        dst: $GAMEDIR/drive_c/Games/$SUBDIR/
+    - extract:
+        src: rebirth
+        dst: $GAMEDIR/drive_c/Games/$SUBDIR/
+    - extract:
+        src: hq_movie
+        dst: $GAMEDIR/drive_c/Games/$SUBDIR/
+    - extract:
+        src: hq_audio
+        dst: $GAMEDIR/drive_c/Games/$SUBDIR/
+
+  wine:
+    dgvoodoo2: true
+    overrides:
+      ddraw: n,b

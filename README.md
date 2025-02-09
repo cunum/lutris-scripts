@@ -1,4 +1,5 @@
-Lutris scripts for the installation of the GOG versions of the following games:
+Lutris scripts for the installation of the GOG versions of the following games. The scripts install the games and apply different patches (like the popular REbirth patch) to make the games work flawlessly on Steam Deck.
+
 
 - Resident Evil (1996)
   - Classic REbirth
@@ -16,8 +17,11 @@ Lutris scripts for the installation of the GOG versions of the following games:
   - HQ movie pack
   - HQ audio pack
   - HQ texture pack
-
-The scripts install the games and apply different patches (like the popular REbirth patch) to make the games work flawlessly on Steam Deck.
+- Dino Crisis 2 (2000)
+  - Classic REbirth
+  - Windows XP patch
+  - HQ movie pack
+  - HQ audio pack
 
 ## **Install Guide for Steam Deck**
 
@@ -35,7 +39,7 @@ The scripts install the games and apply different patches (like the popular REbi
 
 7. Choose where to install the game. The default is fine unless you want to change it. Also click `Create steam shortcut` so the game will be available in your library in Game Mode. Click Continue.
 
-8. Click the `...` button under `GOG setup exe` and select the setup exe file from step 2.
+8. Click the `...` button under `GOG setup exe` and select the setup exe file from step 2. (Note: for Dino Crisis 1+2 you also need to download the HQ (audio, video, texture) packs manually and link the files here.)
 
 9. Click `Install` and let it do it's thing.
 
