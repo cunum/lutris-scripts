@@ -12,7 +12,7 @@ notes: |
   - Windows XP patch
   - HD Mods (movies, audio)
   
-  You will need the following:
+  You will need to download and link the following files manually in the next step:
   - The game setup exe downloaded from your GOG library.
   - HD movie pack from here https://classicrebirth.com/index.php/download/dino-crisis-2-high-quality-movies/
 
@@ -32,6 +32,9 @@ script:
     - hq_audio:
         filename: dc2cr_hq_sfx_2024-04-29.7z
         url: https://classicrebirth.com/index.php/download/dino-crisis-2-high-quality-sfx/?wpdmdl=1917&refresh=67a8b0af874861739108527
+    - x_audio_patch:
+        filename: xaudio2_9.7z
+        url: https://classicrebirth.com/index.php/download/xaudio2-9-legacy/?wpdmdl=1095&refresh=67a8b85e9186c1739110494
   game:
     exe: drive_c/Games/$SUBDIR/$EXE
     prefix: $GAMEDIR
@@ -59,6 +62,9 @@ script:
         dst: $GAMEDIR/drive_c/Games/$SUBDIR/
     - extract:
         src: rebirth
+        dst: $GAMEDIR/drive_c/Games/$SUBDIR/
+    - extract:
+        src: x_audio_patch
         dst: $GAMEDIR/drive_c/Games/$SUBDIR/
     - extract:
         src: hq_movie
