@@ -10,6 +10,7 @@ notes: |
   Installs Japanese version (don't worry, will be English in the end) from GOG and applies the following patches:
   - Classic REbirth patch
   - Windows XP patch
+  - XAudio2.9 patch
   - HD Mods (movies, audio)
   
   You will need to download and link the following files manually in the next step:

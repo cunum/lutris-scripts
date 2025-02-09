@@ -11,7 +11,7 @@ notes: |
   - Classic REbirth patch
   - SourceNext 1.1.0 official patch 
 
-  You will need the following:
+  You will need to download and link the following files manually in the next step:
   - The game setup exe downloaded from your GOG library.
 
 script:
