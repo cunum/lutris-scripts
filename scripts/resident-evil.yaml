@@ -79,11 +79,9 @@ script:
     - extract:
         src: rebirth
         dst: $GAMEDIR/drive_c/Games/$SUBDIR/
-        format: 7z
     - extract:
         src: movie_pack
         dst: $CACHE/movie
-        format: 7z
     - execute:
         command: |
           if [[ $INPUT_MOVIES == "yes" ]]; then

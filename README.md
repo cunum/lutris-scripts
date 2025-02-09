@@ -11,6 +11,7 @@ Lutris scripts for the installation of the GOG versions of the following games. 
 - Resident Evil 3 (1999)
   - Classic REbirth
   - SourceNext 1.1.0 official patch
+  - HQ movie pack
 - Dino Crisis (1999)
   - Classic REbirth
   - Windows XP patch
@@ -39,7 +40,7 @@ Lutris scripts for the installation of the GOG versions of the following games. 
 
 7. Choose where to install the game. The default is fine unless you want to change it. Also click `Create steam shortcut` so the game will be available in your library in Game Mode. Click Continue.
 
-8. Click the `...` button under `GOG setup exe` and select the setup exe file from step 2. (Note: for Dino Crisis 1+2 you also need to download the HQ (audio, video, texture) packs manually and link the files here.)
+8. Click the `...` button under `GOG setup exe` and select the setup exe file from step 2. (Note: for Dino Crisis 1+2 and RE3 you also need to download the HQ (audio, video, texture) packs manually and link the files here.)
 
 9. Click `Install` and let it do it's thing.
 

@@ -60,11 +60,9 @@ script:
     - extract:
         src: rebirth
         dst: $GAMEDIR/drive_c/Games/$SUBDIR/
-        format: 7z
     - extract:
         src: sourcenext_patch
         dst: $GAMEDIR/drive_c/Games/$SUBDIR/
-        format: 7z
   wine:
     dgvoodoo2: true
     overrides:
