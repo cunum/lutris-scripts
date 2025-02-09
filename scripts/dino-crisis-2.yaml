@@ -61,15 +61,11 @@ script:
         src: rebirth
         dst: $GAMEDIR/drive_c/Games/$SUBDIR/
     - extract:
-        src: hq_movie
+        src: hq_audio
         dst: $GAMEDIR/drive_c/Games/$SUBDIR/
     - extract:
-        src: hq_audio
-        dst: $CACHE
-    - merge:
-        description: Copying hq audio files...
-        src: $CACHE/CR/
-        dst: $GAMEDIR/drive_c/Games/$SUBDIR/CR/
+        src: hq_movie
+        dst: $GAMEDIR/drive_c/Games/$SUBDIR/
 
   wine:
     dgvoodoo2: true
