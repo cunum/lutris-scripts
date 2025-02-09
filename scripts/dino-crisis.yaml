@@ -16,6 +16,7 @@ notes: |
   - The game setup exe downloaded from your GOG library.
   - HD movie pack from here https://classicrebirth.com/index.php/download/dino-crisis-high-quality-videos/
   - HD audio pack from here https://classicrebirth.com/index.php/download/dino-crisis-high-quality-music/
+  - HD texture pack from here https://www.mediafire.com/file/ozaua4228fffyia/HD_Mod_1.0.rar
 
 script:
   variables:
@@ -25,15 +26,13 @@ script:
     - setup: N/A:GOG setup exe for Dino Crisis
     - hq_movie: N/A:HQ movie pack for Dino Crisis
     - hq_audio: N/A:HQ audio pack for Dino Crisis
+    - hq_textures: N/A:HQ texture pack for Dino Crisis
     - patch:
         filename: DINO xp.7z
         url: https://classicrebirth.com/index.php/download/dino-crisis-windows-xp-patch/?wpdmdl=972&refresh=67a7a5c2c4ff11739040194
     - rebirth:
         filename: dc1cr 1.0.0 (2020-04-24).7z
         url: https://classicrebirth.com/index.php/download/dino-crisis-classic-rebirth/?wpdmdl=969&refresh=67a7a54eaa2ef1739040078
-    - hq_textures:
-        filename: HD_Mod_1.0.rar
-        url: https://download2390.mediafire.com/wxcm3sde0abg_zOi60bYrMLW7y3xR4J3LIB4pbiKS5xTESXNhoXIawrvcXrpgQBLUbCz1fWDL-SoRkGOShycE4L-ysVHx0WwSTOQ0KbFknTjNiH24a9OelYZiwNL1NBj6SPwR8baQDSuzxicbQ2AnIk1W5BOBXNqDTrSTpDk7uZx/ozaua4228fffyia/HD_Mod_1.0.rar
   game:
     exe: drive_c/Games/$SUBDIR/$EXE
     prefix: $GAMEDIR
