@@ -42,6 +42,8 @@ Lutris scripts for the installation of the GOG versions of the following games. 
 
 8. Click the `...` button under `GOG setup exe` and select the setup exe file from step 2. (Note: for Dino Crisis 1+2 and RE3 you also need to download the HQ (audio, video, texture) packs manually and link the files here.)
 
+![resident evil 3 setup](https://github.com/cunum/lutris-scripts/blob/master/screenshots/screenshot_1.png?raw=true)
+
 9. Click `Install` and let it do it's thing.
 
 10. Done! When you now launch the game you should get the REbirth settings window.
