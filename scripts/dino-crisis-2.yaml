@@ -49,7 +49,7 @@ script:
           [[ $pixels -gt 2100 ]] && dpi=216
           WINEPREFIX="$GAMEDIR" "$WINEBIN" reg add "HKCU\Control Panel\Desktop" /v LogPixels /t REG_DWORD /d $dpi /f
     - execute:
-        command: mkdir -p "$GAMEDIR/drive_c/Games/$SUBDIR"
+        command: mkdir -p "$GAMEDIR/drive_c/Games/$SUBDIR/CR"
     - task:
         args: /SILENT /LANG=jp /SP- /NOCANCEL /SUPPRESSMSGBOXES /NOGUI /DIR="$GAMEDIR/drive_c/Games/$SUBDIR/"
         executable: setup
@@ -61,11 +61,11 @@ script:
         src: rebirth
         dst: $GAMEDIR/drive_c/Games/$SUBDIR/
     - extract:
-        src: hq_audio
-        dst: $GAMEDIR/drive_c/Games/$SUBDIR/
-    - extract:
         src: hq_movie
-        dst: $GAMEDIR/drive_c/Games/$SUBDIR/
+        dst: $GAMEDIR/drive_c/Games/$SUBDIR/CR/
+    - extract:
+        src: hq_audio
+        dst: $GAMEDIR/drive_c/Games/$SUBDIR/CR/
 
   wine:
     dgvoodoo2: true
