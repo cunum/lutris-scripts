@@ -19,7 +19,7 @@ notes: |
 script:
   variables:
     SUBDIR: Dino Crisis 2
-    EXE: DINO2.exe
+    EXE: Dino2.exe
   files:
     - setup: N/A:GOG setup exe for Dino Crisis 2
     - hq_movie: N/A:HQ movie pack for Dino Crisis 2
@@ -65,7 +65,11 @@ script:
         dst: $GAMEDIR/drive_c/Games/$SUBDIR/
     - extract:
         src: hq_audio
-        dst: $GAMEDIR/drive_c/Games/$SUBDIR/
+        dst: $CACHE
+    - merge:
+        description: Copying hq audio files...
+        src: $CACHE/CR/
+        dst: $GAMEDIR/drive_c/Games/$SUBDIR/CR/
 
   wine:
     dgvoodoo2: true
